@@ -32,6 +32,10 @@ return [
                 'path'       => '/campaigns/view/{objectId}/contact/{page}',
                 'controller' => 'MauticCampaignBundle:Campaign:contacts',
             ],
+            'mautic_campaign_preview' => [
+                'path'       => '/campaign/preview/{objectId}',
+                'controller' => 'MauticEmailBundle:Public:preview',
+            ],
         ],
         'api' => [
             'mautic_api_campaignsstandard' => [

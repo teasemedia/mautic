@@ -1402,3 +1402,18 @@ Mautic.campaignBuilderValidateConnection = function (epDetails, checkEvent) {
 
     return valid;
 }
+
+Mautic.selectCampaignType = function(campaignType) {
+    if (campaignType == 'intelligent') {
+        mQuery('.page-header h3').text(mauticLang.newIntelligentCampaign);
+    } else {
+        mQuery('.page-header h3').text(mauticLang.newManualCampaign);
+    }
+
+    mQuery('#campaign_campaignType').val(campaignType);
+
+    mQuery('body').removeClass('noscroll');
+
+    mQuery('.campaign-type-modal').remove();
+    mQuery('.campaign-type-modal-backdrop').remove();
+};

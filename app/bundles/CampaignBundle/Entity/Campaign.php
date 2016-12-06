@@ -82,6 +82,11 @@ class Campaign extends FormEntity
     private $canvasSettings = [];
 
     /**
+     * @var
+     */
+    private $campaignType = 'manual';
+
+    /**
      * Constructor.
      */
     public function __construct()
@@ -94,11 +99,12 @@ class Campaign extends FormEntity
 
     public function __clone()
     {
-        $this->leads  = new ArrayCollection();
-        $this->events = new ArrayCollection();
-        $this->lists  = new ArrayCollection();
-        $this->forms  = new ArrayCollection();
-        $this->id     = null;
+        $this->leads        = new ArrayCollection();
+        $this->events       = new ArrayCollection();
+        $this->lists        = new ArrayCollection();
+        $this->forms        = new ArrayCollection();
+        $this->id           = null;
+        $this->campaignType = null;
 
         parent::__clone();
     }
@@ -151,6 +157,11 @@ class Campaign extends FormEntity
             ->columnName('canvas_settings')
             ->nullable()
             ->build();
+
+        $builder->createField('campaignType', 'text')
+            ->columnName('campaign_type')
+            ->nullable()
+            ->build();
     }
 
     /**
@@ -188,6 +199,7 @@ class Campaign extends FormEntity
                     'forms',
                     'lists', // @deprecated, will be renamed to 'segments' in 3.0.0
                     'canvasSettings',
+                    'campaignType',
                 ]
             )
             ->build();
@@ -512,5 +524,25 @@ class Campaign extends FormEntity
     public function setCanvasSettings(array $canvasSettings)
     {
         $this->canvasSettings = $canvasSettings;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCampaignType()
+    {
+        return $this->campaignType;
+    }
+
+    /**
+     * @param mixed $campaignType
+     *
+     * @return Campaign
+     */
+    public function setCampaignType($campaignType)
+    {
+        $this->campaignType = $campaignType;
+
+        return $this;
     }
 }

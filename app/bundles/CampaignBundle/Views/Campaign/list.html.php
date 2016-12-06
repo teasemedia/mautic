@@ -64,7 +64,9 @@ if ($tmpl == 'index') {
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($items as $item): ?>
+            <?php foreach ($items as $item):
+                $type = $item->getCampaignType();
+                ?>
                 <tr>
                     <td>
                         <?php
@@ -96,6 +98,14 @@ if ($tmpl == 'index') {
                                 ['objectAction' => 'view', 'objectId' => $item->getId()]
                             ); ?>" data-toggle="ajax">
                                 <?php echo $item->getName(); ?>
+
+                                <?php if ($type == 'intelligent'): ?>
+                                    <span data-toggle="tooltip" title="<?php echo $view['translator']->trans(
+                                        'mautic.email.icon_tooltip.intelligent_campaign'
+                                    ); ?>">
+                                <i class="fa fa-fw fa-magic"></i>
+                            </span>
+                                <?php endif; ?>
                             </a>
                         </div>
                         <?php if ($description = $item->getDescription()): ?>

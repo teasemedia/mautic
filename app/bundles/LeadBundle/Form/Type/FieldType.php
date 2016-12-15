@@ -72,6 +72,8 @@ class FieldType extends AbstractType
                     'social'       => 'mautic.lead.field.group.social',
                     'personal'     => 'mautic.lead.field.group.personal',
                     'professional' => 'mautic.lead.field.group.professional',
+                    'sexjobs'      => 'mautic.lead.field.group.sexjobs',
+                    'kinky'        => 'mautic.lead.field.group.kinky'
                 ],
                 'attr' => [
                     'class'   => 'form-control',

@@ -1,0 +1,32 @@
+a{
+    outline:none;
+    color:#ce0c0b;
+    text-decoration:none;
+}
+.l-yellow a{color:#fed615;}
+a:hover{text-decoration:underline !important;}
+.active a:hover{text-decoration:none !important;}
+.h-u a{text-decoration:none;}
+.h-u a:hover{text-decoration:underline !important;}
+a[x-apple-data-detectors]{color:inherit !important; text-decoration:none !important;}
+.active:hover{opacity:0.8;}
+.active{transition:all 0.3s ease;}
+.active-d, .active-l{overflow:hidden;}
+.active-d a, .active-l a{position:relative; display:inline-block;}
+.active-d a:after, .active-l a:after{transition:all 0.3s ease; content:""; position:absolute; left:0; top:0; right:0; bottom:0;}
+.active-d a:hover:after{background:rgba(0,0,0,0.2);}
+.active-l a:hover:after{background:rgba(255,255,255,0.2);}
+a img{border:none;}
+table td{mso-line-height-rule:exactly;}
+[owa] div{display:block !important; font-size:1px; line-height:1px;}
+[owa] div button{display:block; font-size:1px; line-height:1px;}
+@media only screen and (max-width:500px) {
+    .flexible{width:100% !important;}
+    .table-center{float:none !important; margin:0 auto !important;}
+    .img-flex img{width:100% !important; height:auto !important;}
+    .aligncenter{text-align:center !important;}
+    .flex{display:block !important; width:100% !important;}
+    .hide{display:none !important; width:0 !important; height:0 !important; padding:0 !important; font-size:0 !important; line-height:0 !important;}
+    .p-0{padding:0 !important;}
+    .plr-15{padding-left:15px !important; padding-right:15px !important;}
+}

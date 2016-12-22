@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% if page is defined %}
+        <title>{{ page.getTitle() }}</title>
+        <meta name="description" content="{{ page.metaDescription }}" />
+    {% endif %}
+    <link rel="stylesheet" href="{{ getAssetUrl('themes/kinky2/css/kinky2.css') }}" type="text/css" />
+    {{ outputHeadDeclarations() }}
+</head>
+<body>
+{{ outputScripts('bodyOpen') }}
+{% block content %}{% endblock %}
+{{ outputScripts('bodyClose') }}
+</body>
+</html>
